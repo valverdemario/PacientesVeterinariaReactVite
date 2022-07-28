@@ -12,9 +12,11 @@ function App() {
   
   useEffect(() => {
       const pacientesLS = JSON.parse(window.localStorage.getItem("pacientes"));
-      if(pacientesLS.length > 0){
+      
+      if(Object.keys(pacientesLS).length>0){
         setPacientes(pacientesLS);
       }
+     
   }, [])
 
  

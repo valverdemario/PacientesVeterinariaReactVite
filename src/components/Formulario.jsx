@@ -39,8 +39,8 @@ function Formulario({ setPacientes, pacientes, paciente,setPaciente }) {
       const pacientesActualizados = pacientes.map(pacienteState => pacienteState.id === paciente.id ? 
         objPaciente : pacienteState )
 
-        setPacientes(pacientesActualizados);
         setPaciente({});
+        setPacientes(pacientesActualizados);
     } else {
       objPaciente.id = generarID();
       setPacientes([...pacientes, objPaciente]);
