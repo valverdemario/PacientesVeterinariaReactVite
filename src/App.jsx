@@ -11,18 +11,21 @@ function App() {
 
   
   useEffect(() => {
-      const pacientesLS = JSON.parse(window.localStorage.getItem("pacientes"));
+    const obtenerLs = () => {
+      const pacientesLS = JSON.parse(localStorage.getItem("pacientes")) ?? [];
       
       if(Object.keys(pacientesLS).length>0){
         setPacientes(pacientesLS);
       }
+    }
+    obtenerLs();
      
   }, [])
 
  
 
   useEffect(() => {
-    window.localStorage.setItem("pacientes", JSON.stringify(pacientes));
+    localStorage.setItem('pacientes', JSON.stringify(pacientes));
   }, [pacientes])
 
 
